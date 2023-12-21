@@ -4,6 +4,7 @@
 
 * Origin 
    - is the name used for the remote repository.
+   <p align="center"><a href="./Origin-upstream.png" target="_blank"><img src="./Origin-upstream.png" width="400" alt="git pull">Origin</a></p>
 
 * Master 
   - is the name of the branch
@@ -91,3 +92,50 @@ git pull upstream main
 ```
 
 - git pull upstream main is used to fetch changes from the "upstream" remote repository and automatically merge them into your local branch (typically the main branch)
+
+
+
+ ### git pull
+    - Updates your current local branch with the latest changes from the remote repository
+
+    ```bash
+    git pull [remote] [branch]
+    ```
+
+    - If you're working in a team and someone else has pushed to the branch in the meantime, 
+    you might need to pull changes before pushing your new commits. In that case, you can use
+
+    ```bash
+    git pull origin your-branch
+    git push origin your-branch
+    ```
+    - This ensures that you incorporate changes from the remote repository before pushing your new commits.
+
+  <p align="center"><a href="./1_Fl.png" target="_blank"><img src="./1_Fl.png" width="400" alt="git pull">git pull</a></p>
+
+
+
+  ### git diff
+  To see the differences between two branches in Git
+
+  Install Meld
+  ```bash
+  sudo apt-get install meld
+  ```
+
+  Configure Git to Use Meld:
+  ```bash
+  git config --global diff.tool meld
+  git config --global difftool.meld.path meld
+  ```
+
+  To see the differences between two branches in Git
+  ```bash
+  git diff branch1..branch2
+  ```
+
+  Differences in a side-by-side view
+  ```bash
+  git difftool -y branch1..branch2
+  ```
+  <p align="center"><a href="Screenshot from 2023-12-21 08-11-09.png" target="_blank"><img src="Screenshot from 2023-12-21 08-11-09.png" width="400" alt="git diff"></a></p>
